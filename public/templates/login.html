@@ -1,0 +1,347 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #f9f9f9;
+    }
+    .container > * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .wrapper {
+        position: relative;
+        width: 800px;
+        height: 700px;
+        /* background: linear-gradient(90deg, #54880e, #f2f2f2); */
+        border-radius: 50px;
+        box-shadow: 0 0 60px rgba(0, 0, 0, .3);
+        padding: 60px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background:bottom url('https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636614/IMG_20230514_125620_lteyes.jpg');
+        margin-top: 100px;
+        margin-left: 350px;
+    }
+    .form-wrapper {
+        z-index: 2;
+    }
+
+    .wrapper .form-wrapper.login {
+        transition: .7s ease-in-out;
+        transition-delay: .7s;
+    }
+
+    .wrapper.active .form-wrapper.login {
+        transition-delay: 0s;
+        transform: translateX(-400px);
+    }
+
+    .wrapper .form-wrapper.register {
+        position: absolute;
+        margin-top: 15px;
+        transform: translateX(-400px);
+        transition: .7s ease-in-out;
+    }
+
+    .wrapper.active .form-wrapper.register {
+        transition-delay: .7s;
+        transform: translateX(0);
+    }
+
+    h2 {
+        font-size: 2em;
+        text-align: center;
+        color: darkgreen;
+    }
+
+    .input-box {
+        position: relative;
+        width: 320px;
+        margin: 30px 0;
+    }
+
+    .input-box input {
+        width: 100%;
+        height: 50px;
+        background: transparent;
+        border: 2px solid darkgreen;
+        outline: none;
+        border-radius: 40px;
+        font-size: 1em;
+        color: #000000;
+        padding: 0 20px 0 40px;
+    }
+
+    .input-box input::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+    }
+
+    .input-box .icon {
+        position: absolute;
+        left: 15px;
+        color: darkgreen;
+        font-size: 1.2em;
+        line-height: 55px;
+    }
+
+    .forgot-pass {
+        margin: -15px 0 15px 15px;
+    }
+
+    .forgot-pass a {
+        color: darkgreen;
+        font-size: .9em;
+        text-decoration: none;
+    }
+
+    .forgot-pass a:hover {
+        text-decoration: underline;
+    }
+
+    button {
+        width: 100%;
+        height: 45px;
+        background: #f2f2f2;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 1em;
+        color: #54880e;
+        font-weight: 500;
+        backdrop-filter: blur;
+        transition: all 0.3s;
+    }
+    button:hover{
+        background: darkgreen;
+    }
+
+    .sign-link {
+        font-size: .9em;
+        text-align: center;
+        margin: 25px 0;
+    }
+
+    .sign-link p {
+        color: darkgreen;
+    }
+
+    .sign-link p a {
+        color: darkgreen;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .sign-link p a:hover {
+        text-decoration: underline;
+    }
+
+    /* For Small Devices */
+    @media screen and (min-width: 320px){
+        .container{
+            /* background-color: aqua; */
+        }
+       .container .wrapper{
+            width: 100%;
+            height: 790px;
+            margin-top: 0px;
+            margin: 0 auto;
+            margin-left: 0;
+            text-align: center;
+            border-radius: 20px;
+       } 
+       .form-wrapper{
+        /* background-color: aqua; */
+        margin-left: -49px;
+       }
+       h2{
+        text-align: center;
+       }
+       .input-box {
+        width: 280px;
+        margin: 30px 0;
+        }
+    }
+    @media screen and (min-width: 375px){
+        .container .wrapper{
+            width: 100%;
+            height: 790px;
+            margin-top: 0px;
+            margin: 0 auto;
+            margin-left: 0;
+            text-align: center;
+            border-radius: 20px;
+       } 
+       
+    }
+    /* Small Devices End */
+
+    /* For Medium Devices */
+    @media screen and (min-width: 425px){
+        .container .wrapper{
+            width: 100%;
+            height: 790px;
+            margin-top: 0px;
+            margin: 0 auto;
+            margin-left: 0;
+            text-align: center;
+            border-radius: 20px;
+       } 
+    }
+
+    @media screen and (min-width: 768px){
+        .container .wrapper{
+            width: 100%;
+            height: 790px;
+            margin-top: 0px;
+            margin: 0 auto;
+            margin-left: 0;
+            text-align: center;
+            border-radius: 20px;
+       } 
+    }
+    /*  Medium Devices End */
+
+    /* For Large Devices */
+    @media screen and (min-width: 1024px){
+        .container .wrapper{
+            width: 100%;
+            height: 790px;
+            margin-top: 0px;
+            margin: 0 auto;
+            margin-left: 0;
+            text-align: center;
+            border-radius: 20px;
+       } 
+    }
+    @media screen and (min-width:1440px){
+        .container .wrapper{
+            width: 100%;
+            height: 790px;
+            margin-top: 50px;
+            margin: 0 auto;
+            margin-left: 0;
+            text-align: center;
+            border-radius: 20px;
+       } 
+    }
+    /* Large Devices End */
+    </style>
+<div class="container">
+    <div class="wrapper">
+        <div class="form-wrapper login">
+            <form method="post" action="{% url 'Login' %}">
+                {% csrf_token %}
+                <h2>Login</h2>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" name="username" autocomplete="off" placeholder="User Name" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" name="password" autocomplete="new-password" placeholder="Password" required>
+                </div>
+                <div class="forgot-pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit">Login</button>
+                <div class="sign-link">
+                    <p>Don't have an account? <a href="#" onclick="registerActive()">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-wrapper register">
+            <form method="post" action="{% url 'Register' %}">
+                {% csrf_token %}
+                <h2>Registration</h2>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" name="username" placeholder="User Name" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit">Register</button>
+                <div class="sign-link">
+                    <p>Already have an account? <a href="#" onclick="loginActive()">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <div class="Message_Box">
+        {% for message in messages %}
+        <div class="Alert_Message">{{message}}</div>
+        {% endfor %}
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const wrapper = document.querySelector('.wrapper');
+
+        function registerActive() {
+            wrapper.classList.toggle('active');
+        }
+
+        function loginActive() {
+            wrapper.classList.toggle('active');
+        }
+    </script>
+
+{% endblock content %}

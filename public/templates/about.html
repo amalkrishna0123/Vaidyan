@@ -1,0 +1,1632 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    /* background:repeat url(/static/images/5660740.jpg);
+    background-size: cover; */
+    /* margin: 3.5rem 0 0 0; */
+}
+.header{
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.container > * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.header .container{
+    margin: 0;
+    max-width: 320px;
+    overflow: hidden;
+    width: 100%;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+video{
+    max-width: 100%;
+    height: auto;
+}
+.About__Container{
+    
+    /* margin-left: var(--mb-1-5); */
+    /* margin-right: var(--mb-1-5); */
+}
+.main__container{
+    /* padding: 3.5rem 0 2rem; */
+    margin-left:0;
+    margin: 13%;
+    position: relative;
+}
+.main__container-title{
+    text-align: center;
+    margin-top: -40px;
+    font-size: 1rem;
+    color: rgb(24, 85, 0);
+    /* -webkit-text-stroke: .2px gold ; */
+}
+.container__box1{
+    position: absolute;
+    width: 170px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+.container__box1 img{
+    border-radius: 10px;
+}
+.container__box__2{
+    position: absolute;
+    width: 80px;
+    background: rgba(255, 255, 255, .8);
+    backdrop-filter: blur;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px;
+    height: 80px;
+    margin-left: 130px;
+    margin-top: 30px;
+}
+.container__box__2 .box__title{
+    font-size: .75rem;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(24, 85, 0);
+    /* -webkit-text-stroke: .1px gold ; */
+}
+.container__box__2 .box__description{
+    text-align: center;
+    font-size: 8px;
+    margin-top: 5px;
+    line-height: 10px;
+}
+.History_Background{
+    position: relative;
+    margin-top: 100px;
+}
+/* .Background{
+    object-fit: cover;
+    overflow: hidden;  
+    object-position: center;
+    opacity: .5;
+    height: 1320px;
+    width: 320px;
+    border-radius: 20px;
+    margin-top: 100px;
+} */
+/* .Background_img{
+    position: absolute;
+    margin-top: 10px;
+    mix-blend-mode: overlay;
+    width: 320px;
+} */
+/* .Background_img img{
+    width: 320px;
+    height: 1130px;
+    border-radius: 20px;
+    margin-top: -140px;
+    margin-left: -13px;
+    box-shadow: 2px 2px 2px black;
+} */
+.History_Background .Background_Title{
+    margin-top: -100px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 750;
+    color: rgb(24, 85, 0);
+    /* -webkit-text-stroke: .6px gold ; */
+    /* margin-left: 30px; */
+}
+.History_Background .Background_Profile{
+    position: absolute;
+    width: 110px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.History_Background .Background_Profille-Name{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.History_Background .Background_Profile img{
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.History_Background .Background_Description{
+    margin-top: 170px;
+    position: absolute;
+    text-align: center;
+    color:darkgreen;
+    /* margin-left: -3px; */
+    width: 290px;
+} 
+.Background_Description .Description_Content{
+    font-size: .7rem;    
+}
+
+.Background_Profille-Name{
+    margin-left: 135px;
+    width: 100%;
+    margin-top: -120px;
+    font-size: 10px;
+}
+.Name__Profession{
+    display: block;
+    font-size: 8.5px;
+}
+.Name__Profession1{
+    font-size: 10px;
+    margin-left: 135px;
+    margin-top: 7px;
+    width: 100%;
+}
+.Name__Profession-span{
+    display: block;
+}
+.Background_Description-Certificate{
+    width: 250px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.Background_Description-Title{
+    margin-top: -30px;
+    font-weight: 600;
+    color:darkgreen;
+    /* -webkit-text-stroke: .3px gold ; */
+}
+.Background_Description-License{
+    width: 250px;
+    margin-top:-10px;
+    border-radius: 10px;
+}
+.Background_Description-Title1{
+    margin-top: -420px;
+    font-weight: 600;
+    color:darkgreen;
+    /* -webkit-text-stroke: .3px gold ; */
+}
+.history{
+    margin-top: 1230px;
+    background-color: rgba(2, 137, 4, 0.771);
+    border-radius: 10px;
+    height: 260px;
+    width: 290px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.history .history__title{
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(216, 216, 216);
+}
+.history__title{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.history .history__description{
+    text-align: center;
+    font-size: .7rem;   
+    position: absolute; 
+    margin-top: 60px;
+    color: white;
+    line-height: 15px;
+}
+.background__video{
+    position: relative;
+    height: 200px;
+    margin-top: 20px;
+    width:290px;
+}
+.background__video .video-bg{
+    object-fit: cover;
+    object-position: center;
+    width:290px;
+    border-radius: 10px;
+}
+.about__shop{
+    background-color: rgba(2, 137, 4, 0.771);
+    border-radius: 10px;
+    height: 360px;
+    width: 290px;
+}
+.treatment__title{
+    text-align: center;
+    font-size: 1.5rem;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 95px;
+    color: rgb(216, 216, 216);
+}
+.treatment__list{
+    text-align: center;
+    line-height: 22px;
+    font-size: .8rem;
+    position: absolute;
+    margin-top: 50px;
+    color: white;
+}
+.treatment__list .treatment__list-span{
+    color: black;
+}
+.main__container2{
+    margin-top: 10px;
+    position: relative;
+    margin-left: -20px;
+}
+.main__container2 .container__box3{
+    position: absolute;
+    width: 170px;
+    border-radius: 10px;
+    margin-left: 120px;
+}
+.main__container2 .container__box3 img{
+    width: 170px;
+    border-radius: 10px;
+}
+.main__container2 .container__box__4{
+    position: absolute;
+    width: 80px;
+    height:80px;
+    background: rgba(255, 255, 255, .8);
+    backdrop-filter: blur;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.main__container2 .container__box__4 .box__title{
+    font-size: .75rem;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(19, 61, 0);
+    /* -webkit-text-stroke: .1px gold ; */
+}
+.main__container2 .container__box__4 .box__description{
+    text-align: center;
+    font-size: 8px;
+    margin-top: 5px;
+    line-height: 10px;
+}
+.about__contact-us{
+    margin-top: 150px;
+}
+.about__contact-us .contact__us__des{
+    text-align: center;
+    margin-left:20px ;
+}
+.about__contact-us .loader{
+    margin-left:120px ;
+}
+
+  /* Button */
+  .loader {
+    margin-left: 100px;
+    margin-left: -10px;
+  }
+
+  .scanner a {
+    color: transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    margin-left: -20px;
+  }
+
+  .scanner a::before {
+    content: "Contact Us";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 4px solid rgb(34, 0, 255);
+    overflow: hidden;
+    color: gold;
+    animation: load91371 2s linear infinite;
+  }
+
+  .scanner button {
+    border: none;
+    background: transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 10px;
+  }
+  
+  @keyframes load91371 {
+
+    0%,
+    10%,
+    100% {
+      width: 0;
+    }
+
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90%,
+    100% {
+      border-right-color: transparent;
+    }
+
+    11%,
+    21%,
+    31%,
+    41%,
+    51%,
+    61%,
+    71%,
+    81%,
+    91% {
+      border-right-color: aqua;
+    }
+
+    60%,
+    80% {
+      width: 100%;
+    }
+  }
+
+  /* Button End */
+
+@media screen and (min-width: 375px){
+    .conteiner{
+        margin: 0;
+        overflow: hidden;
+    }
+    .header .container{
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 365px;
+        overflow: hidden;
+        width: 100%;
+    }
+    .main__container-title{
+        font-size: 1.3rem;
+    }
+    /* .Background{
+        object-fit: cover;
+        overflow: hidden;  
+        object-position: center;
+        opacity: .3;
+        height: 1550px;
+        width: 375px;
+    } */
+    .container__box1{
+        position: absolute;
+        width: 220px;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-left:-10px;
+    }
+    .container__box__2{
+        position: absolute;
+        width: 110px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+        margin-left: 180px;
+        margin-top: 50px;
+        height: 90px;
+    }
+    .container__box__2 .box__title{
+        font-size: 13px;
+    }
+    .container__box__2 .box__description{
+        text-align: center;
+        font-size: 9px;
+        margin-top: 5px;
+    }
+    .History_Background{
+        position: relative;
+        margin-top: 0px;
+    }
+    .Background_Title{
+        font-size: 1.8rem;
+    }
+    .Background_img{
+        position: absolute;
+        margin-top: 0px;
+        mix-blend-mode: overlay;
+        margin-left: 0px;
+        /* width: 370px; */
+    }
+    /* .Background_img img{
+        width: 370px;
+        height: 1270px;
+        border-radius: 20px;
+        margin-top: 180px;
+    } */
+    .History_Background .Background_Title{
+        margin-top: 0px;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 750;
+        color: rgb(24, 85, 0);
+        /* -webkit-text-stroke: .6px gold ; */
+        /* margin-left: 20px; */
+    }   
+    .History_Background .Background_Profile{
+        position: absolute;
+        width: 120px;
+        margin-top: 20px;
+        margin-left: 40px;
+    }
+    .History_Background .Background_Description{
+        margin-top: 170px;
+        position: absolute;
+        text-align: center;
+        color:darkgreen;
+        /* margin-left: -5px; */
+        width: 340px;
+    } 
+    .Background_Description .Description_Content{
+        font-size: .8rem;    
+        line-height: 18px;
+    }
+    .history{
+        margin-top: 1210px;
+        width: 345px;
+    }
+    .history__title{
+        margin-left: 40px;
+    }
+    .history .history__description{
+        text-align: center;
+        width: 330px;
+        margin-left: 5px;
+    }
+    .background__video{
+        position: relative;
+        height: 200px;
+        margin-top: 20px;
+        width:345px;
+    }
+    .background__video .video-bg{
+        object-fit: cover;
+        object-position: center;
+        width:345px;
+        border-radius: 10px;
+    }
+    .about__shop{
+        background-color: rgba(2, 137, 4, 0.771);
+        border-radius: 10px;
+        margin-top: 20px;
+        width: 345px;
+    }
+    .treatment__title{
+        margin-left: 100px;
+    }
+    .treatment__list{
+        margin-left: 0px;
+    }
+    .main__container2{
+        margin-top: 20px;
+        position: relative;
+    }
+    .main__container2 .container__box3{
+        position: absolute;
+        width: 220px;
+        border-radius: 10px;
+        margin-left: 120px;
+    }
+    .main__container2 .container__box3 img{
+        width: 220px;
+        border-radius: 10px;
+    }
+    .main__container2 .container__box__4{
+        position: absolute;
+        width: 110px;
+        height:90px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+        margin-left: 40px;
+        margin-top: 30px;
+    }
+    .about__contact-us{
+        margin-top: 170px;
+    }
+    .about__contact-us .loader{
+        margin-left:150px ;
+    }
+}
+
+@media screen and (min-width: 425px){
+    .header .container{
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 400px;
+        overflow: hidden;
+        width: 100%;
+    }
+    .container{
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    .container__box1{
+        position: absolute;
+        width: 250px;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-left: -20px;
+    }
+    .container__box__2{
+        position: absolute;
+        width: 120px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+        margin-left: 210px;
+        margin-top: 50px;
+        height: 100px;
+    }
+    .History_Background{
+        position: relative;
+        margin-top: 0px;
+    }
+    .Background_img{
+        position: absolute;
+        margin-top: 0px;
+        mix-blend-mode: overlay;
+        margin-left: 0px;
+        width: 420px;
+    }
+    
+    .History_Background .Background_Title{
+        margin-top: 0px;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 750;
+        color: rgb(24, 85, 0);
+        /* -webkit-text-stroke: .6px gold ; */
+        margin-left: 20px;
+    } 
+    .History_Background .Background_Profile{
+        position: absolute;
+        width: 120px;
+        margin-top: 20px;
+        margin-left: 80px;
+    }  
+    .History_Background .Background_Description{
+        margin-top: 170px;
+        position: absolute;
+        text-align: center;
+        color:darkgreen;
+        width: 400px;
+        margin-left: 15px;
+    } 
+    .Background_Description .Description_Content{
+        font-size: .8rem;    
+        line-height: 18px;
+    }
+    .Background_Description-Certificate{
+        width: 300px;
+        margin-top: 10px;
+        border-radius: 10px;
+        height: auto;
+    }
+    .Background_Description-License{
+        width: 280px;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+    .history{
+        margin-top: 1300px;
+        width: 410px;
+        margin-left: 7px;
+    }
+    .history .history__title{
+        margin-left: 70px;
+    }
+    .history .history__description{
+        text-align: center;
+        width: 390px;
+        font-size: 13px;
+        line-height: 20px;
+        margin-left: 10px;
+    }
+    .background__video{
+        position: relative;
+        height: 200px;
+        margin-top: 20px;
+        width:410px;
+        margin-left: 7px;
+    }
+    .background__video .video-bg{
+        object-fit: cover;
+        object-position: center;
+        width:410px;
+        border-radius: 10px;
+    }
+    .about__shop{
+        background-color: rgba(2, 137, 4, 0.771);
+        border-radius: 10px;
+        margin-top: 40px;
+        width: 410px;
+        margin-left: 7px;
+    }
+    .treatment__title{
+        text-align: center;
+        font-size: 1.5rem;
+        position: absolute;
+        margin-top: 15px;
+        margin-left: 150px;
+        color: rgb(216, 216, 216);
+    }
+    .treatment__list{
+        text-align: center;
+        line-height: 22px;
+        font-size: 13px;
+        position: absolute;
+        margin-top: 60px;
+        color: white;
+        margin-left: 0px;
+        width: 390px;
+        margin-left: 10px;
+    }
+    .main__container2{
+        margin-top: 30px;
+        position: relative;
+    }
+    .main__container2 .container__box3{
+        position: absolute;
+        width: 250px;
+        border-radius: 10px;
+        margin-left: 150px;
+    }
+    .main__container2 .container__box3 img{
+        width: 250px;
+        border-radius: 10px;
+    }
+    .main__container2 .container__box__4{
+        position: absolute;
+        width: 120px;
+        height:100px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+        margin-left: 50px;
+        margin-top: 45px;
+    }
+    .about__contact-us{
+        margin-top: 210px;
+        color:darkgreen;
+    }
+    .about__contact-us .loader{
+        margin-left:200px ;
+        height: 30px;
+        margin-top: 10px;
+    }
+    .Background_Description-Title{
+        margin-top: -20px;
+        font-size: 1.8rem;
+    }
+    .Background_Description-Title1{
+        margin-top: -480px;
+        font-size: 1.8rem;
+    }
+}
+@media (min-width: 450px){
+    .container{
+        max-width: 450px;
+        overflow: hidden;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .header{
+        margin: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .header .container{
+        max-width: 450px;
+        width: 100%;
+    }
+    .container__box1{
+        margin-left: 10px;
+    }
+    .History_Background .Background_Profile{
+        margin-left: 110px;
+    }
+    .History_Background .Background_Description{
+        margin-top: 170px;
+        position: absolute;
+        text-align: center;
+        color:darkgreen;
+        width: 400px;
+        margin-left: 25px;
+    } 
+    .history{
+        margin-left: 20px;
+    }
+    .background__video{
+        margin-left: 20px;
+    }
+    .about__shop{
+        margin-left: 20px;
+    }
+}
+@media (min-width: 495px){
+    .container{
+        overflow: hidden;
+        margin: 0 auto;
+        max-width: 475px;
+        width: 100%;
+    }
+    .header{
+       margin: 0 auto;
+       width: 100%;
+    }
+    .header .container{
+        max-width: 475px;
+        width: 100%;
+    }
+    .History_Background{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .History_Background .Background_Description{
+        margin-left: 35px;
+    }
+    .history{
+        margin-top: 1300px;
+        margin-left: 30px;
+    }
+    .background__video{
+        margin-left: 30px;
+    }
+    .about__shop{
+        margin-left: 30px;
+    }
+    .about__contact-us .loader{
+        text-align: center;
+        margin-left: 0;
+    }
+}
+@media (min-width:550px){
+    .container{
+        margin: 0 auto;
+        max-width: 480px;
+        width: 100%;
+    }
+    .header{
+        left: 0;
+        top: 0;
+    }
+    .history{
+        margin-top: 1230px;
+    }
+
+}
+@media (min-width : 600px){
+    .container{
+        margin: 0 auto;
+        max-width: 600px;
+        width: 100%;
+    }
+    .header{
+        width: 100%;
+    }
+    .header .container{
+        width: 100%;
+        max-width: 600px;
+    }
+    .History_Background{
+        justify-content: center;
+        text-align: center;
+    }
+    .History_Background .Background_Description{
+        justify-content: center;
+        /* align-items: center; */
+        width: 500px;
+    }
+    .History_Background .Background_Profile{
+        margin-left: 170px;
+    }
+    .history{
+        margin-left: 90px;
+    }
+    .background__video{
+        margin-left: 90px;
+    }
+    .about__shop{
+        margin-left: 90px;
+    }
+    .treatment__list{
+        width: 380px;
+    }
+}
+@media screen and (min-width: 768px){
+    .header .container{
+        margin: 0 auto;
+        max-width: 768px;
+        width: 100%;
+    }
+    .main__container{
+        margin-top: 130px;
+    }
+    .main__container-title{
+        font-size: 2rem;
+    }
+    .Background{
+        object-fit: cover;
+        overflow: hidden;  
+        object-position: center;
+        opacity: .3;
+        height: 1550px;
+        width: 768px;
+    }
+    .container__box1{
+        position: absolute;
+        width: 370px;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-left: -20px;
+    }
+    .container__box__2{
+        position: absolute;
+        width:170px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+        margin-left: 280px;
+        margin-top: 100px;
+        height: 130px;
+    }
+    .container__box__2 .box__title{
+        font-size:17px ;
+        margin-top: 20px;
+    }
+    .container__box__2 .box__description{
+        font-size: 11px;
+        line-height: 16px;
+    }
+    .History_Background{
+        position: relative;
+        margin-top: 200px;
+    }
+    .History_Background .Background_Title{
+        margin-top: -1460px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .Background_img{
+        position: absolute;
+        margin-top: -1700px;
+        mix-blend-mode: overlay;
+        width: 650px;
+    }
+    .Background_img img{
+        height: 1320px;
+        border-radius: 20px;
+        margin-top: 180px;
+        margin-left: 30px;
+        width: 650px;
+    }
+    .History_Background .Background_Profile img{
+        margin-top: -115px;
+        margin-left: 10px;
+        width: 250px;
+    }
+    .Background_Profille-Name{
+        margin-left: 200px;
+        width: 100%;
+        margin-top: -130px;
+        font-size: 13px;
+    }
+    .Name__Profession{
+        display: block;
+        font-size: 10px;
+    }
+    .Name__Profession1{
+        font-size: 11px;
+        margin-left: 200px;
+        margin-top: 7px;
+        width: 100%;
+    }
+    .Name__Profession-span{
+        display: block;
+    }
+    .Background_Description-Certificate{
+        width: 300px;
+        margin-top: 10px;
+        border-radius: 10px;
+        height: auto;
+    }
+    .Background_Description-License{
+        width: 280px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+    .History_Background .Background_Profile{
+        position: absolute;
+        width: 160px;
+        margin-top: 140px;
+        margin-left: 110px;
+    }
+    .history{
+        margin-top: 1250px;
+        width: 550px;
+        margin-left: 25px;
+    }
+    .history .history__title{
+        margin-left: 100px;
+        margin-top: 25px;
+        font-size: 2rem;
+    }
+    .history .history__description{
+        text-align: center;
+        width: 540px;
+        margin-left: 5px;
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 80px;
+    }
+    .background__video{
+        position: relative;
+        height: 200px;
+        margin-top: 20px;
+        width:550px;
+        margin-left: 25px;
+    }
+    .background__video .video-bg{
+        object-fit: cover;
+        object-position: center;
+        width:650px;
+        border-radius: 10px;
+    }
+    .about__shop{
+        background-color: rgba(2, 137, 4, 0.771);
+        border-radius: 10px;
+        margin-top: 110px;
+        width: 550px;
+        margin-left: 25px;
+    }
+    .treatment__title{
+        font-size: 2rem;
+        margin-left: 180px;
+        color: rgb(209, 208, 208);
+    }
+    .treatment__list{
+        font-size: 14px;
+        color: white;
+        margin-left: 25px;
+        margin-top: 60px;
+        width: 490px;
+    }
+    .main__container2{
+        margin-top: 30px;
+        position: relative;
+        margin-left: 110px
+    }
+    .main__container2 .container__box3{
+        position: absolute;
+        width: 370px;
+        border-radius: 10px;
+        margin-left: 80px;
+    }
+    .main__container2 .container__box3 img{
+        width: 370px;
+        border-radius: 10px;
+    }
+    .main__container2 .container__box__4{
+        position: absolute;
+        width: 170px;
+        height:130px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+        margin-left: -20px;
+        margin-top: 85px;
+    }
+    .main__container2 .container__box__4 .box__title{
+        font-size: 17px;
+        margin-top: 20px;
+    }
+    .main__container2 .container__box__4 .box__description{
+        font-size: 11px;
+        line-height: 16px;
+    }
+    .about__contact-us{
+        margin-top: 370px;
+        font-size: 18px;
+    }
+    .about__contact-us .loader{
+        margin-top: 20px;
+        text-align: center;
+    }
+    .History_Background .Background_Description{
+        margin-top: 220px;
+        position: absolute;
+        text-align: center;
+        color:darkgreen;
+        width: 555px;
+        margin-left: 25px;
+    } 
+    .Background_Description .Description_Content{
+        font-size: .87rem;    
+        line-height: 19px;
+    }
+    
+    .Background_Description-Title{
+        margin-top: -30px;
+        font-size: 1.8rem;
+    }
+    .Background_Description-Title1{
+        margin-top: -480px;
+        font-size: 1.8rem;
+    }
+}
+@media screen and (min-width: 1024px){
+    .container{
+        max-width: 900px;
+        width: 100%;
+    }
+    .header .container{
+        margin: 0 auto;
+        max-width: 1024px;
+        width: 100%;
+    }
+    .Background{
+        object-fit: cover;
+        overflow: hidden;  
+        object-position: center;
+        opacity: .3;
+        height: 1550px;
+        width: 1024px;
+    }
+    .main__container-title{
+        font-size: 2.8rem;
+    }
+    .container__box1{
+        position: absolute;
+        width: 470px;
+        height: auto;
+        border-radius: 15px;
+        margin-top: 10px;
+        margin-left: -10px;
+    }
+    .container__box1 img{
+        border-radius: 15px;
+    } 
+    .container__box__2{
+        position: absolute;
+        width: 180px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+        margin-left: 420px;
+        margin-top: 120px;
+        height: 150px;
+    }
+    .History_Background{
+        position: relative;
+        margin-top: 300px;
+    }
+    .Background_Description-Certificate{
+        width: 300px;
+        margin-top: 10px;
+        border-radius: 10px;
+        height: auto;
+    }
+    .Background_Description-License{
+        width: 280px;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+    .history{
+        margin-top: 1340px;
+        margin-left: 160px;
+    }
+    .history .history__description{
+        text-align: center;
+    }
+    .background__video{
+        position: relative;
+        height: 200px;
+        margin-top: 20px;
+        margin-left: 160px;
+    }
+    .background__video .video-bg{
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+    }
+    .about__shop{
+        background-color: rgba(2, 137, 4, 0.771);
+        border-radius: 10px;
+        margin-top: 110px;
+        margin-left: 160px;
+    }
+    .main__container2{
+        margin-top: 20px;
+        position: relative;
+    }
+    .main__container2 .container__box3{
+        position: absolute;
+        width: 470px;
+        border-radius: 10px;
+        margin-left: 190px;
+    }
+    .main__container2 .container__box3 img{
+        width: 470px;
+        border-radius: 10px;
+    }
+    .main__container2 .container__box__4{
+        position: absolute;
+        width: 170px;
+        height:150px;
+        background: rgba(255, 255, 255, .8);
+        backdrop-filter: blur;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+        margin-left: 50px;
+        margin-top: 120px;
+    }
+    .about__contact-us{
+        margin-top: 350px;
+    }
+    .about__contact-us .loader{
+        text-align: center;
+        margin-left: 0px ;
+    }
+    .Background_Description-Title{
+        margin-top: -20px;
+        font-size: 1.8rem;
+    }
+    .Background_Description-Title1{
+        margin-top: -480px;
+        font-size: 1.8rem;
+    }
+    .Background_img{
+        position: absolute;
+        margin-top: -1750px;
+        mix-blend-mode: overlay;
+        width: 700px;
+    }
+    .Background_img img{
+        width: 700px;
+        height: 1700px;
+        border-radius: 20px;
+        margin-top: 180px;
+        margin-left: 130px;
+    }
+    .History_Background .Background_Title{
+        margin-top: -1500px;
+        /* text-align: center; */
+        /* font-size: 2rem; */
+        font-weight: 790;
+        /* margin-left: 430px; */
+    }
+    .History_Background .Background_Profile{
+        margin-left: 290px;
+    }
+    .History_Background .Background_Description{
+        margin-top: 240px;
+        position: absolute;
+        text-align: center;
+        color:darkgreen;
+        width: 680px;
+        margin-left: 80px;
+    } 
+    .Background_Description .Description_Content{
+        font-size: 16.5px;    
+        line-height: 22px;
+    }
+}
+@media (min-width:1200px){
+    .container{
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .main__container{
+        margin-top: 15%;
+    }
+    .container__box1{
+        width: 500px;
+        height: auto;
+        margin-left: 30px;
+    }
+    .container__box__2{
+        width: 220px;
+        height: 170px;
+        margin-left: 450px;
+    }
+    .History_Background .Background_Title{
+        font-size: 3rem;
+    }
+    .History_Background .Background_Profile{
+        width: 200px;
+        margin-left: 200px;
+    }
+    .History_Background .Background_Profille-Name{
+        font-size: 16px;
+        margin-left: 280px;
+        margin-top: -180px;
+    }
+    .History_Background .Name__Profession{
+        font-size: 14px;
+    }
+    .History_Background .Name__Profession1{
+        font-size: 14px;
+        margin-left: 280px;
+    }
+    .History_Background .Description_Content{
+        width: 850px;
+        font-size: 17px;
+        line-height: 27px;
+        margin-top: 50px;
+        margin-left: -20px;
+    }
+    .Background_Description-Title{
+        font-size: 3rem;
+        margin-left: 95px;
+    }
+    .Background_Description-Certificate{
+        width: 450px;
+        margin-top: 20px;
+        border-radius: 10px;
+        height: auto;
+        margin-left: 90px;
+    }
+    .Background_Description-Title1{
+        font-size: 3rem;
+        margin-left: 95px;
+        margin-top: -650px;
+    }
+    .Background_Description-License{
+        width: 380px;
+        margin-top: 30px;
+        border-radius: 10px;
+        margin-left: 90px;
+    }
+    .history{
+        margin-top: 1700px;
+        margin-left: 200px;
+    }
+    .background__video{
+        margin-left: 200px;
+    }
+    .about__shop{
+        margin-left: 200px;
+    }
+    .main__container2 .container__box3{
+        width: 500px;
+        margin-left: 200px;
+    }
+    .main__container2 .container__box3 img{
+        width: 500px;
+    }
+    .main__container2 .container__box__4{
+        width: 220px;
+        height: 170px;
+    }
+    
+
+}
+@media screen and (min-width: 1440px){
+    .container{
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .main__container{
+        margin-top: 15%;
+    }
+    .container__box1{
+        width: 500px;
+        height: auto;
+        margin-left: 30px;
+    }
+    .container__box__2{
+        width: 220px;
+        height: 170px;
+        margin-left: 450px;
+    }
+    .History_Background .Background_Title{
+        font-size: 3rem;
+    }
+    .History_Background .Background_Profile{
+        width: 200px;
+        margin-left: 200px;
+    }
+    .History_Background .Background_Profille-Name{
+        font-size: 16px;
+        margin-left: 280px;
+        margin-top: -180px;
+    }
+    .History_Background .Name__Profession{
+        font-size: 14px;
+    }
+    .History_Background .Name__Profession1{
+        font-size: 14px;
+        margin-left: 280px;
+    }
+    .History_Background .Description_Content{
+        width: 850px;
+        font-size: 17px;
+        line-height: 27px;
+        margin-top: 50px;
+        margin-left: -20px;
+    }
+    .Background_Description-Title{
+        font-size: 3rem;
+        margin-left: 95px;
+    }
+    .Background_Description-Certificate{
+        width: 450px;
+        margin-top: 20px;
+        border-radius: 10px;
+        height: auto;
+        margin-left: 90px;
+    }
+    .Background_Description-Title1{
+        font-size: 3rem;
+        margin-left: 95px;
+        margin-top: -650px;
+    }
+    .Background_Description-License{
+        width: 380px;
+        margin-top: 30px;
+        border-radius: 10px;
+        margin-left: 90px;
+    }
+    .history{
+        margin-top: 1700px;
+        margin-left: 200px;
+    }
+    .background__video{
+        margin-left: 200px;
+    }
+    .about__shop{
+        margin-left: 200px;
+    }
+    .main__container2 .container__box3{
+        width: 500px;
+        margin-left: 200px;
+    }
+    .main__container2 .container__box3 img{
+        width: 500px;
+    }
+    .main__container2 .container__box__4{
+        width: 220px;
+        height: 170px;
+    }
+    
+
+}
+
+</style>
+<div class="container">
+    <div class="About__Container">
+
+        <div class="main__container">
+          <h2 class="main__container-title">About</h2>
+          <div class="container__box1">
+            <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695654262/IMG_20230925_203253_l6yxbf.jpg" alt="">
+          </div>
+          <div class="container__box__2">
+            <h3 class="box__title">Lorem</h3>
+            <p class="box__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit
+            </p>
+          </div>
+        </div>
+    
+        <!-- TK Ayurvedic -->
+        <div class="History_Background">
+          <video class="Background" playsinline autoplay muted loop>
+          </video>
+          <div class="Background_img">
+            <!-- <img src="/static/images/IMG_20230517_114459.jpg" alt=""> -->
+          </div>
+          <h2 class="Background_Title">TK AYURVEDIC</h2>
+          <div class="Background_Content">
+            <div class="Background_Profile">
+              <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636630/IMG_20230518_125805_r6hsk2.jpg" alt="">
+              <div class="Background_Profille-Name">
+                <h2>Dr.Biju T K <span class="Name__Profession">(Doctor of TK Ayurvedic Pharmacy)</span></h2>
+              </div>
+              <h3 class="Name__Profession1">Marma Thirumma & <span class="Name__Profession-span">Panchakarma Specialist</span></h3>
+            </div>
+            <div class="Background_Description">
+              <p class="Description_Content">TK Ayurvedic is an ayurvedic pharmacy shop located at Thrikkuttissery. Biju T K is running this shop and he himself is doing the treatment here. A treatment method that is not seen anywhere else, the traditional medicine treatment or Wayanadan Ottamooli treatment method is done here. Medicines are prepared entirely from green plants are mostly used here. The doctor of TK Ayurvedic pharmacy, who learned from a traibal elder 40 years ago, and who has been able to heal many people by applying ottamooli treatment in the soil of Balussery, a hilly region. Looking at his ability throug his single root treatment for 20 consecutive days. Not only this, his medicine is very old diseases. Today, TK Ayurvedic pharmacy which is operating on the opposite side of Balussery Thrikkuttissery U.P School is frequented by many people. Because the medicine prepared by using these unadulterated native green medicines and the same pure medicines are very beneficial compared to the medicines prepared here in other Other Ayurvedic fields. This is the reason why more people come here.</p>
+              <br><br>
+    
+              <h2 class="Background_Description-Title">CERTIFICATE</h2>
+              <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636657/IMG_20230518_132125_tv9xv0.jpg" alt="" class="Background_Description-Certificate">
+    
+              <br><br>
+    
+              <!-- <p class="Description_Content1"> Assumenda laudantium omnis provident repudiandae voluptate at labore facilis.
+                Vel nihil possimus commodi alias, ad, similique laborum odit consequuntur debitis labore laudantium maiores,
+                veritatis error eligendi deleniti distinctio molestias doloremque?
+                Consequatur harum vitae repudiandae, atque maiores sequi dolores aut modi rem possimus accusamus omnis
+                assumenda voluptatibus magni, voluptates impedit corrupti minima. Unde impedit pariatur explicabo iusto
+                doloribus animi eaque harum?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos iste omnis obcaecati doloribus atque
+                debitis sequi ex, illum hic, natus ea fuga magnam quod sint eius. Blanditiis obcaecati error eligendi.
+                Quam soluta ipsam dolor, eaque fugiat nisi quasi similique repudiandae dolorum facilis optio vel ut adipisci
+                aperiam aliquid assumenda. Fugiat, ut asperiores. Aliquam, esse ipsam temporibus fuga excepturi eum hic.
+                Cum, perferendis incidunt. Aperiam autem, nesciunt optio ex cumque officiis facilis debitis dolores.
+                Deleniti dolorum hic nulla quas eius? Alias molestias libero dignissimos maxime quo nihil obcaecati facere
+                consequuntur placeat!
+              </p> -->
+              <br><br>
+    
+              <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636637/IMG_20230518_131856_1_khiptc.jpg" alt="" class="Background_Description-License">
+              <div class="Background_Description-Licencse-Content">
+                <h2 class="Background_Description-Title1">LICENSE</h2>
+                <!-- <p class="Background_Description-Title-desc">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, enim modi rem nulla incidunt, commodi
+                  corporis sequi, excepturi obcaecati est officia sit ipsum quo optio quisquam. Quasi esse rem facere?
+                </p> -->
+              </div>
+    
+            </div>
+          </div>
+        </div>
+        <br><br><br>
+        <!-- Ending -->
+    
+        <div class="history" style="text-align: center;">
+          <h2 class="history__title">Vayanadan Ottamooli</h2>
+          <p class="history__description">
+            Treatment with local medicines<span class="history__description-name">(Nattu Marunnu)</span> is said to relieve sudden illness after taking medicine once or twice. Treatment can be done in two ways,traditional medicine treatment or ottamooli treatment. Every season we get a fever, cold, allergy, sore throat... All these diseases come suddenly to us. That means quick treatment for sudden diseases. And treatment of chronic diseases like psoriasis, eczema, various skin diseases, gout, gout, rheumatism, asthma, etc. That is, by taking medicine for a certain period of time, some lifestyle changes can be treated and cured  
+          </p>
+        </div>
+        <div class="background__video">
+          <video autoplay muted loop class="video-bg">
+            <source src="https://res.cloudinary.com/dqydgc2ky/video/upload/v1695637474/Takradhara_-_for_mental_health___Ayurvedic_treatment_720p_i63zj3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="about__shop">
+          <!-- <div class="shop__detail">
+            <h2 class="shop__detail-title">About TK Ayurvedic</h2>
+            <p class="shop__detail-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nisi magni id corporis obcaecati similique
+              vitae architecto voluptatibus. Quisquam cumque itaque fugiat suscipit aperiam maiores nemo velit facere
+              reiciendis dicta!
+            </p>
+          </div> -->
+          <div class="treatments">
+            <h2 class="treatment__title">Treatments</h2>
+            <ul class="treatment__list">
+                            
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Breathing Problem</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Migraine</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Non-Speech(Also children with autism)</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Sex Based Problems</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Gout(Various types of gouty diseases)</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Knee wear and tear(Treatment without surgery even if told to do it)</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Spondylitis</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Wait Gain and Weight Loss</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Beauty Treatments(Acne,Age Wrinkle)</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Piles</li>
+              <li class="treatment__items"><span class="treatment__list-span">*</span> Hair Fall</li>
+              <br>
+            </ul>
+          </div>
+        </div>
+    
+    
+        <div class="main__container2">
+          <!-- <h2 class="main__container-title"></h2> -->
+          <div class="container__box3">
+            <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695654363/IMG_20230925_203312_o6vltx.jpg" alt="">
+          </div>
+          <div class="container__box__4">
+            <h3 class="box__title">Lorem</h3>
+            <p class="box__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit
+            </p>
+          </div>
+        </div>
+    
+        <div class="about__contact-us">
+          <p class="contact__us__des">
+            For more details contact our pharmacy shop
+          </p>
+          <div class="loader">
+            <div class="scanner">
+              <button><a href="{% url 'Contact' %}">Contact Us</a></button>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+
+    const navMenu = document.getElementById('nav-menu'),
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
+
+    /*===== MENU SHOW =====*/
+    /* Validate if constant exists */
+    if(navToggle){
+        navToggle.addEventListener('click', () =>{
+            navMenu.classList.add('show-menu')
+        })
+    }
+        
+    /*===== MENU HIDDEN =====*/
+    /* Validate if constant exists */
+    if(navClose){
+        navClose.addEventListener('click', () =>{
+            navMenu.classList.remove('show-menu')
+        })
+    }
+
+    /*=============== REMOVE MENU MOBILE ===============*/
+    const navLink = document.querySelectorAll('.nav__link')
+
+    function linkAction(){
+        const navMenu = document.getElementById('nav-menu')
+        // When we click on each nav__link, we remove the show-menu class
+        navMenu.classList.remove('show-menu')
+    }
+    navLink.forEach(n => n.addEventListener('click', linkAction))
+        //Scroll Reveal//
+    
+       const sr = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 2500,
+        delay: 400,
+        reset:true
+        })
+       sr.reveal('.container__box1, .shop__detail-title, .treatment__title, .container__box__4, .Background_Profile img, .Background_Description-Certificate, .Background_Description-License', { origin: 'left' })
+       sr.reveal('.container__box__2, .background__video, .shop__detail-description, .treatment__list, .container__box3, .Background_Profille-Name h2, .Background_Description-Title, .Background_Description-Title-desc', { origin: 'right' })
+       sr.reveal('.main__container-title, .history__title, .contact__us__des, .Background_Title, .Background_Description-Title1', { origin: 'top' })
+       sr.reveal('.history__description, .Description_Content, .Description_Content1', { origin: 'bottom' })
+       sr.reveal('.loader', { interval: 100 })
+    
+    
+    
+    //Scroll Reveal Ending//
+      </script>
+{% endblock content %}

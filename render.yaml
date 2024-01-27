@@ -1,0 +1,5 @@
+services:
+  - name: web
+    env: python=3.8
+    build_command: pip install -r requirements.txt
+    start_command: gunicorn Ayurvedic-Pharmacy.wsgi:application --bind 0.0.0.0:5432

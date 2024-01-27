@@ -1,0 +1,2014 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== CSS ===============-->
+
+    <title>TK Ayurvedic Pharmacy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+        :root {
+            --header-height: 3.5rem;
+            --hue: 152;
+            --first-color: hsl(var(--hue), 24%, 32%);
+            --first-color: hsl(var(--hue), 24%, 28%);
+            --first-color-light: hsl(var(--hue), 24%, 66%);
+            --first-color-lighten: hsl(var(--hue), 24%, 92%);
+            --title-color: hsl(var(--hue), 4%, 15%);
+            --text-color: hsl(var(--hue), 4%, 35%);
+            --text-color-light: hsl(var(--hue), 4%, 55%);
+            --body-color: hsl(var(--hue), 0%, 100%);
+            --container-color: #fff;
+
+            --body-font: 'Poppins', sans-serif;
+            --big-font-size: 2rem;
+            --h1-font-size: 1.5rem;
+            --h2-font-size: 1.25rem;
+            --h3-font-size: 1rem;
+            --normal-font-size: .938rem;
+            --small-font-size: .813rem;
+            --smaller-font-size: .75rem;
+
+            --font-medium: 500;
+            --font-semi-bold: 600;
+
+            --mb-0-5: .5rem;
+            --mb-0-75: .75rem;
+            --mb-1: 1rem;
+            --mb-1-5: 1.5rem;
+            --mb-2: 2rem;
+            --mb-2-5: 2.5rem;
+
+            --z-toolip: 10;
+            --z-fixed-: 100;
+        }
+
+        @media screen and (min-width:968px) {
+            :root {
+                --big-font-size: 3.5rem;
+                --h1-font-size: 2.25rem;
+                --h2-font-size: 1.5rem;
+                --h3-font-size: 1.25rem;
+                --normal-font-size: 1rem;
+                --small-font-size: .875rem;
+                --smaller--font-size: .813rem;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body,
+        button,
+        input,
+        textarea {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+        }
+
+        body {
+            margin: var(--header-height)0 0 0;
+            background-color: var(--body-color);
+            color: var(--text-color);
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--title-color);
+            font-weight: var(--font-semi-bold);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .section {
+            padding: 5.5rem 0 1rem;
+        }
+
+        .section__title,
+        .section__title-center {
+            font-size: var(--h2-font-size);
+            margin-bottom: var(--mb-2);
+            line-height: 140%;
+        }
+
+        .section__title-center {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 968px;
+            margin-left: var(--mb-1-5);
+            margin-right: var(--mb-1-5);
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .main {
+            overflow: hidden;
+        }
+
+        /* Hedaer Starting */
+        .header {
+            width: 100%;
+            background-color: var(--body-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: var(--z-fixed-);
+        }
+
+        /* Header Ending */
+
+        /* Nav Starting */
+        .nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav__logo,
+        .nav__toggle,
+        .nav__close {
+            color: var(--title-color);
+        }
+
+        .nav__logo {
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: -1px;
+            display: inline-flex;
+            align-items: center;
+            column-gap: .5rem;
+            transition: .3s;
+        }
+
+        .nav__logo img {
+            height: 80px;
+        }
+
+        .nav__toggle {
+            display: inline-flex;
+            font-size: 1.35rem;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 767px) {
+            .nav__menu {
+                position: fixed;
+                /* background-color: var(--container-color); */
+                backdrop-filter: blur(15px) brightness(75%) saturate(70%);
+                width: 80%;
+                height: 100%;
+                top: 0;
+                right: -100%;
+                box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+                padding: 4rem 0 0 3rem;
+                border-radius: 1rem 0 0 1rem;
+                transition: .3s;
+                z-index: var(--z-fixed-);
+            }
+        }
+
+        .nav__close {
+            font-size: 1.5rem;
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            cursor: pointer;
+        }
+
+        .nav__list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.25rem;
+            text-align: center;
+            /* cursor: pointer; */
+        }
+
+        .nav__link {
+            color: rgb(0, 217, 255);
+            font-weight: 700;
+        }
+
+        .show-menu {
+            right: 0%;
+        }
+
+        /* Nav Ending  */
+
+        .home {
+            padding: 3.5rem 0 2rem;
+        }
+
+        .button__icon {
+            font-size: 22px;
+            display: inline;
+            transition: .3s;
+            row-gap: 1rem;
+        }
+
+        .button--link {
+            color: #fff;
+            background-color: var(--first-color);
+            font-size: var(--font-medium);
+            display: inline-flex;
+            padding: .75rem .75rem;
+            border-radius: 8px;
+            opacity: 0;
+            animation: slideTop 1s ease forwards;
+            animation-delay: .7s;
+        }
+
+        .button--link:hover {
+            background-color: rgba(128, 128, 128, 1);
+        }
+
+        .button--link:hover .button__icon {
+            transform: translateX(.25rem);
+        }
+
+        .home {
+            background: no-repeat url(https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636735/teahub.io-nature-forest-wallpaper-953584_sm42bn.jpg);
+            background-size: cover;
+        }
+
+        .home__image {
+            border-radius: 20px;
+        }
+
+        .home__container {
+            position: relative;
+            row-gap: 2rem;
+        }
+
+        .home__img {
+            width: 350px;
+            opacity: 0;
+            animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+            animation-delay: 1s, 2s;
+            justify-self: center;
+        }
+
+        .home__data {
+            background: transparent;
+        }
+
+        .home__title {
+            font-size: var(--big-font-size);
+            line-height: 140%;
+            margin-bottom: var(--mb-1);
+            /* transition: .3s; */
+            /* opacity: 0; */
+            /* animation: slideBottom 1s ease forwards; */
+            /* animation-delay: .7s; */
+            color: #fff;
+        }
+
+
+
+        .home__description {
+            margin-bottom: var(--mb-2-5);
+            opacity: 0;
+            /* animation: slideLeft 1s ease forwards; */
+            animation-delay: 1s;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .home__social {
+            position: absolute;
+            top: 2rem;
+            right: -1rem;
+            display: grid;
+            justify-items: center;
+            row-gap: 3.5rem;
+        }
+
+        .home__social-follow {
+            font-weight: var(--font-medium);
+            font-size: var(--smaller--font-size);
+            color: var(--first-color);
+            position: relative;
+            transform: rotate(90deg);
+        }
+
+        .home__social-follow::after {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            background-color: var(--first-color);
+            right: -45%;
+            top: 50%;
+        }
+
+        .about {
+            background: url(/static/images/360_F_293982647_USouokl5bsOCbQEG3qCD14TCHLetFxYa.jpg);
+            background-size: cover;
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 60px;
+        }
+
+        .about__container {
+            row-gap: 2rem;
+        }
+
+        .about__img {
+            width: 350px;
+            justify-self: center;
+            border-radius: 20px;
+        }
+
+        .about__title {
+            margin-bottom: var(--mb-1);
+        }
+
+        .about__description {
+            margin-bottom: var(--mb-2);
+        }
+
+        .about__details {
+            display: grid;
+            row-gap: 1rem;
+            margin-bottom: var(--mb-2-5);
+        }
+
+        .about__details-description {
+            display: inline-flex;
+            column-gap: .5rem;
+            font-size: var(--small-font-size);
+            transition: .3s;
+            opacity: 0;
+            animation: slideTop .5s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+        }
+
+        .about__details-icon {
+            font-size: 1rem;
+            color: var(--first-color);
+            margin-top: .15rem;
+        }
+
+        .scroll-header {
+            box-shadow: 1px 1px 1px rgba(128, 128, 128, 0.516);
+        }
+
+        .steps {
+            width: 100%;
+        }
+
+        .steps__bg {
+            background-color: var(--first-color);
+            padding: 3rem 2rem 2rem;
+            border-radius: 1rem;
+        }
+
+        .steps__container {
+            gap: 2rem;
+            padding-top: 1rem;
+        }
+
+        .steps__title {
+            color: #fff;
+        }
+
+        .steps__card {
+            background-color: var(--container-color);
+            padding: 2.5rem 3rem 2rem 1.5rem;
+            border-radius: 1rem;
+        }
+
+        .steps__card-number {
+            display: inline-block;
+            background-color: var(--first-color);
+            color: #fff;
+            padding: .5rem .75rem;
+            border-radius: .25rem;
+            font-size: var(--h2-font-size);
+            margin-bottom: var(--mb-1-5);
+            transition: .3s;
+        }
+
+        .steps__card-title {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb-0-5);
+        }
+
+        .steps__card-description {
+            font-size: var(--small-font-size);
+        }
+
+        .steps__card:hover .steps__card-number {
+            transform: translateY(-.25rem);
+        }
+
+        /* Product */
+
+        .product__description {
+            text-align: center;
+        }
+
+        .product__container {
+            padding: 3rem 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 3rem;
+            background: top no-repeat url(/static/images/white-aesthetic-table-vase.jpg);
+            border-radius: 20px;
+            background-size: cover;
+        }
+
+        .product__card {
+            display: grid;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        .product__img {
+            position: relative;
+            width: 140px;
+            justify-self: center;
+            margin-bottom: var(--mb-0-75);
+            transition: .3s;
+            border-radius: 50%;
+        }
+
+        .product__title,
+        .product__price {
+            font-size: .813rem;
+            font-weight: 600;
+            color: black;
+        }
+
+        .product__title {
+            margin-bottom: .25rem;
+        }
+
+        .product__button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: var(--first-color);
+            color: #fff;
+            padding: .25rem;
+            border-radius: .25rem;
+            font-size: 1.15rem;
+        }
+
+        .product__button:hover {
+            background-color: var(--first-color-light);
+        }
+
+        .product__circle {
+            width: 90px;
+            height: 90px;
+            background-color: var(--first-color-lighten);
+            border-radius: 50%;
+            position: absolute;
+            top: 18%;
+            left: 5%;
+        }
+
+        .product__card:hover .product__img {
+            transform: translateY(-.5rem);
+        }
+
+        /* Questions */
+        .questions {
+            background-color: var(--first-color-lighten);
+        }
+
+        .questions__container {
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+        }
+
+        .qustions__group {
+            display: grid;
+            row-gap: 1.5rem;
+        }
+
+        .questions__item {
+            background-color: var(--container-color);
+            border-radius: .25rem;
+        }
+
+        .questions__item-title {
+            font-size: var(--small-font-size);
+            font-weight: var(--font-medium);
+        }
+
+        .questions__icon {
+            font-size: 1.25rem;
+            color: var(--title-color);
+        }
+
+        .questions__description {
+            font-size: var(--smaller--font-size);
+            padding: 0 1.25rem 1.25rem 2.5rem;
+        }
+
+        .questions__header {
+            display: flex;
+            align-items: center;
+            column-gap: .5rem;
+            padding: .75rem .5rem;
+            cursor: pointer;
+        }
+
+        .questions__content {
+            overflow: hidden;
+            height: 0;
+        }
+
+        .questions__item,
+        .questions__header,
+        .questions__item-title,
+        .questions__icon,
+        .questions__description,
+        .questions__content {
+            transition: .3s;
+        }
+
+        .questions__item:hover {
+            box-shadow: 0 2px 8px hsla(var(--hue), 4%, 15%, .15);
+        }
+
+        .accordion-open .questions__header,
+        .accordion-open .questions__content {
+            background-color: var(--first-color);
+        }
+
+        .accordion-open .questions__item-title,
+        .accordion-open .questions__description,
+        .accordion-open .questions__icon {
+            color: #fff;
+        }
+
+        .accordion-open .questions__icon {
+            transform: rotate(45deg);
+        }
+
+        /*Contact Starting */
+
+        .contact__container {
+            row-gap: 3.5rem;
+        }
+
+        .contact__data {
+            display: grid;
+            row-gap: 2rem;
+        }
+
+        .contact__subtitle {
+            font-size: var(--normal-font-size);
+            font-weight: var(--font-medium);
+            color: var(--text-color);
+            margin-bottom: var(--mb-0-5);
+        }
+
+        .contact__description {
+            display: inline-flex;
+            align-items: center;
+            column-gap: .5rem;
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+        }
+
+        .contact__icon {
+            font-size: 1.25rem;
+        }
+
+        .contact__inputs {
+            display: grid;
+            row-gap: 2rem;
+            margin-bottom: var(--mb-2-5);
+        }
+
+        .contact__content {
+            position: relative;
+            height: 3rem;
+            border-bottom: 1px solid var(--text-color-light);
+        }
+
+        .contact__input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1rem 1rem 1rem 0;
+            background: none;
+            border: none;
+            outline: none;
+            z-index: 1;
+        }
+
+        .contact__label {
+            position: absolute;
+            top: .75rem;
+            width: 100%;
+            font-size: var(--small-font-size);
+            color: var(--text-color-light);
+            transition: .3s;
+        }
+
+        .contact__area {
+            height: 7rem;
+        }
+
+        .contact__area textarea {
+            resize: none;
+        }
+
+        .contact__input:focus+.contact__label {
+            top: -.75rem;
+            left: 0;
+            font-size: var(--smaller--font-size);
+            z-index: 10;
+        }
+
+        .contact__input:not(:placeholder-shown).contact__input:not(:focus)+.contact__label {
+            top: -.75rem;
+            left: 0;
+            font-size: var(--smaller--font-size);
+            z-index: 10;
+        }
+
+        /* Contact Ending */
+
+        /* Footer Starting */
+
+        .footer__container {
+            row-gap: 3rem;
+        }
+
+        .footer__logo {
+            display: inline-flex;
+            height: 80px;
+            margin-bottom: var(--mb-2-5);
+            transition: .3s;
+        }
+
+        .footer__title {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb-1-5);
+        }
+
+        .footer__subscribe {
+            background-color: var(--first-color-lighten);
+            padding: .75rem;
+            display: flex;
+            justify-content: space-between;
+            border-radius: .5rem;
+        }
+
+        .footer__input {
+            width: 70%;
+            padding: 0.5rem;
+            background-color: none;
+            border: none;
+            outline: none;
+        }
+
+        .footer__data {
+            display: grid;
+            row-gap: .75rem;
+        }
+
+        .footer__information {
+            font-size: var(--small-font-size);
+        }
+
+        .footer__social {
+            display: inline-flex;
+            column-gap: .75rem;
+        }
+
+        .footer__social-link {
+            font-size: 1rem;
+            color: var(--text-color);
+            transition: .3s;
+        }
+
+        .footer__social-link:hover {
+            transform: translateY(-.25rem);
+        }
+
+        .footer__cards {
+            display: inline-flex;
+            height: 60px;
+            column-gap: .5rem;
+        }
+
+        .footer__copy {
+            text-align: center;
+            font-size: var(--smaller--font-size);
+            color: var(--text-color-light);
+            margin: 5rem 0 1rem;
+        }
+
+        /* Footer Ending */
+
+        /* For small devices */
+
+        @media screen and (max-width:360px) {
+            .container {
+                margin-left: var(--mb-1);
+                margin-right: var(--mb-1);
+            }
+
+            .nav__link:hover {
+                color: aqua;
+            }
+
+            .home__image {
+                width: 250px;
+                margin-left: 10px;
+            }
+
+            .home__img {
+                width: 200px;
+                height: auto;
+                margin-left: 20px;
+            }
+
+            .home__title {
+                font-size: var(--h1-font-size);
+                text-align: center;
+            }
+
+            .home__description {
+                text-align: center;
+            }
+
+            .home__data {
+                height: 250px;
+            }
+
+            .home__data .button--link {
+                margin-left: 120px;
+                margin-top: -50px;
+            }
+
+            .about {
+                margin-left: -2px;
+            }
+
+            .about__img {
+                margin-left: 2px;
+            }
+
+            .about__title {
+                text-align: center;
+            }
+
+            .about__description {
+                text-align: center;
+            }
+
+            .button--flex {
+                margin-left: 120px;
+            }
+
+            .steps {
+                margin-left: -3px;
+            }
+
+            .steps__bg {
+                padding: 2rem 1rem;
+            }
+
+            .steps__card {
+                padding: 1.5rem;
+            }
+
+            .product__container {
+                grid-template-columns: .6fr;
+                justify-content: center;
+            }
+        }
+
+        @media screen and (min-width: 375px) {
+            .container {
+                margin-left: var(--mb-1);
+                margin-right: var(--mb-1);
+            }
+
+            .nav__link:hover {
+                color: aqua;
+            }
+
+            .home__image {
+                width: 250px;
+                margin-left: 10px;
+            }
+
+            .home__img {
+                width: 250px;
+                height: auto;
+                margin-left: 37px;
+            }
+
+            .home__title {
+                font-size: var(--h1-font-size);
+                text-align: center;
+            }
+
+            .home__description {
+                text-align: center;
+            }
+
+            .home__data {
+                height: 250px;
+            }
+
+            .home__data .button--link {
+                margin-left: 120px;
+                margin-top: -50px;
+            }
+
+            .about {
+                margin-left: -2px;
+            }
+
+            .about__img {
+                margin-left: 2px;
+            }
+
+            .about__title {
+                text-align: center;
+            }
+
+            .about__description {
+                text-align: center;
+            }
+
+            .button--flex {
+                margin-left: 120px;
+            }
+
+            .steps {
+                margin-left: -3px;
+            }
+
+            .steps__bg {
+                padding: 2rem 1rem;
+            }
+
+            .steps__card {
+                padding: 1.5rem;
+            }
+
+            .product__container {
+                grid-template-columns: .6fr;
+                justify-content: center;
+            }
+        }
+
+        /* small devices ending */
+
+        /* Samsung */
+
+        @media screen and (min-width: 425px) {
+            .container {
+                margin-left: var(--mb-1);
+                margin-right: var(--mb-1);
+            }
+
+            .nav__link:hover {
+                color: aqua;
+            }
+
+            .home__image {
+                width: 350px;
+                margin-left: 10px;
+            }
+
+            .home__img {
+                width: 300px;
+                height: auto;
+                margin-left: 35px;
+            }
+
+            .home__title {
+                font-size: 1.7rem;
+                text-align: center;
+            }
+
+            .home__description {
+                text-align: center;
+            }
+
+            .home__data {
+                height: 250px;
+            }
+
+            .home__data .button--link {
+                margin-left: 155px;
+                margin-top: -50px;
+            }
+
+            .about {
+                margin-left: -2px;
+            }
+
+            .about__title {
+                text-align: center;
+            }
+
+            .about__description {
+                text-align: center;
+            }
+
+            .button--flex {
+                margin-left: 155px;
+            }
+
+            .steps {
+                margin-left: -3px;
+            }
+
+            .steps__bg {
+                padding: 2rem 1rem;
+            }
+
+            .steps__card {
+                padding: 1.5rem;
+            }
+
+            .product__container {
+                grid-template-columns: .6fr;
+                justify-content: center;
+            }
+        }
+
+        /* Samsung End */
+
+        /* For Medium Devices */
+
+        @media screen and (min-width : 576px) {
+            .steps__container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home__img {
+                margin-left: 50px;
+            }
+
+            .about {
+                margin-left: -3px;
+            }
+
+            .nav__link:hover {
+                color: aqua;
+            }
+
+            .about__title {
+                text-align: center;
+            }
+
+            .about__description {
+                text-align: center;
+            }
+
+            .about__details {
+                text-align: center;
+                margin-left: 80px;
+            }
+
+            .button--flex {
+                margin-left: 200px;
+            }
+
+            .product__description {
+                padding: 0 4rem;
+            }
+
+            .product__container {
+                grid-template-columns: repeat(2, 170px);
+                justify-content: center;
+                column-gap: 5rem;
+            }
+
+            .footer__subscribe {
+                width: 400px;
+            }
+        }
+
+        @media screen and (min-width : 767px) {
+            body {
+                margin: 0;
+            }
+
+            .nav {
+                height: calc(var(--header-height) + 1.5rem);
+                column-gap: 3rem;
+            }
+
+            .nav__toggle,
+            .nav__close {
+                display: none;
+            }
+
+            .nav__list {
+                flex-direction: row;
+                column-gap: 3rem;
+            }
+
+            .nav__menu {
+                margin-left: auto;
+            }
+
+            .home__container,
+            .about__container,
+            .questions__container,
+            .contact__container,
+            .footer__container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home {
+                padding: 10rem 0 5rem;
+            }
+
+            .home__container {
+                align-items: center;
+            }
+
+            .home__image {
+                width: 350px;
+            }
+
+            .home__img {
+                width: 350px;
+                order: 1;
+            }
+
+            .home__title {
+                font-size: 3rem;
+            }
+
+            .home__description {
+                font-size: 1.2rem;
+            }
+
+            .questions__container {
+                align-items: flex-start;
+            }
+
+            .footer__container {
+                column-gap: 3rem;
+            }
+
+            .footer__subscribe {
+                width: initial;
+            }
+
+            .footer__content .footer__logo-icon {
+                margin-top: -60px;
+            }
+        }
+
+        /* Medium Devices Ending */
+
+        /* For Large Screen */
+
+        @media screen and (min-width : 1024px) {
+            .container {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .section {
+                padding: 8rem 0 1rem;
+            }
+
+            .section__title,
+            .section__title-center {
+                font-size: var(--h1-font-size);
+            }
+
+            .nav__link::after {
+                content: ' ';
+                width: 0;
+                height: 3px;
+                background-color: rgb(132, 120, 98);
+                margin: auto;
+                display: block;
+            }
+
+            .nav__link:hover::after {
+                width: 100%;
+                transition: width 0.3s linear;
+            }
+
+            .home {
+                width: 100%;
+                padding: 13rem 0 5rem;
+            }
+
+            .home__description {
+                padding-right: 7rem;
+            }
+
+            .about__img {
+                width: 400px;
+            }
+
+            .steps__container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .steps__bg {
+                padding: 3.5rem 2.5rem;
+            }
+
+            .steps__card-title {
+                font-size: var(--normal-font-size);
+            }
+
+            .product__description {
+                padding: 0 16rem;
+            }
+
+            .product__container {
+                padding: 4rem 0;
+                grid-template-columns: repeat(3, 160px);
+                gap: 4rem 6rem;
+            }
+
+            .product__img {
+                width: 180px;
+            }
+
+            .product__circle {
+                width: 90px;
+                height: 90px;
+            }
+
+            .product__title,
+            .product__price {
+                font-size: var(--normal-font-size);
+            }
+
+            .questions__container {
+                padding: 1rem 0 4rem;
+            }
+
+            .questions__title {
+                text-align: initial;
+            }
+
+            .questions__group {
+                row-gap: 2rem;
+            }
+
+            .questions__header {
+                padding: 1rem;
+            }
+
+            .questions__description {
+                padding: 0 3.5rem 2.25rem 2.75rem;
+            }
+
+            .footer__logo {
+                height: 90px;
+            }
+
+            .footer__content .footer__logo-icon {
+                margin-top: -60px;
+            }
+
+            .footer__container {
+                grid-template-columns: 1fr .5fr .5fr .5fr;
+            }
+
+        }
+
+        @media screen and (min-width : 1200px) {
+            .home {
+                width: 100%;
+                height: 720px;
+                margin: 0;
+            }
+
+            .nav__link::after {
+                content: ' ';
+                width: 0;
+                height: 3px;
+                background-color: rgb(132, 120, 98);
+                margin: auto;
+                display: block;
+            }
+
+            .nav__link:hover::after {
+                width: 100%;
+                transition: width 0.3s linear;
+            }
+
+            .home .home__data {
+                width: 100%;
+            }
+
+            .home__image {
+                width: 400px;
+            }
+
+            .home__img {
+                width: auto;
+
+            }
+
+            .home__title {
+                text-align: center;
+            }
+
+            .home__description {
+                margin-left: 80px;
+                letter-spacing: 1px;
+                padding: 0;
+            }
+
+            .home__data .button--link {
+                margin-left: 50px;
+            }
+
+            .home__social {
+                right: -3rem;
+                row-gap: 4.5rem;
+            }
+
+            .home__social-follow {
+                font-size: var(--small-font-size);
+            }
+
+            .home__social-follow::after {
+                width: 1.5rem;
+                right: -60%;
+            }
+
+            .about__container {
+                column-gap: 7rem;
+            }
+
+            .footer__content .footer__logo-icon {
+                margin-top: -60px;
+            }
+        }
+
+        /* Large Screen Ending */
+
+        /* Key Frames Starting */
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideTop {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideBottom {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatImage {
+            0% {
+                transform: translateY(0);
+
+            }
+
+            50% {
+                transform: translateY(-24px);
+
+            }
+
+            100% {
+                transform: translateY(0);
+
+            }
+        }
+
+        /* Key Frames Ending */
+    </style>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636682/logoori_ieznhg.png" alt="">
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="{% url 'home' %}" class="nav__link active-link">Home</a>
+                    </li>
+
+                    {% if user.is_authenticated and user.is_staff %}
+                    <li class="nav__item">
+                        <a href="{% url 'ManageBooking' %}" class="nav__link">Manage</a>
+                    </li>
+                    {% endif %}
+
+
+                    <li class="nav__item">
+                        <a href="{% url 'About' %}" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{% url 'Treatment' %}" class="nav__link">Treatment</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{% url 'Contact' %}" class="nav__link">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                {% if user.is_authenticated %}
+                <a href="{% url 'Logout' %}" class=" change-theme Login" style="color: green;">Logout</a>
+                {% else %}
+                <a href="{% url 'Login' %}" class=" change-theme Login" style="color: green;">Login</a>
+                {% endif %}
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    {% block content %}
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <div class="home__container container grid">
+                <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636463/20230430_195223_gmbhn9.png" alt="" class="home__img">
+
+                <div class="home__data">
+                    <h1 class="home__title"></h1>
+                    <p class="home__description " style="opacity: 1;">
+                        The path pf surrender doesn't mean inaction. Take action from there, claim inner peace.Be safe
+                        be the light.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section container" id="about">
+            <div class="about__container grid">
+                <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695654363/IMG_20230925_203312_o6vltx.jpg" alt="" class="about__img">
+
+                <div class="about__data">
+                    <h2 class="section__title about__title">
+                        Who we really are & <br> why choose us
+                    </h2>
+
+                    <p class="about__description">
+                        focus on using natural ingredients and adopting a holistic approach to health.
+                    </p>
+
+                    <div class="about__details">
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            We always deliver on time.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            We give you guides to protect and care for your treatment.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            We always come over for a check-up after sale.
+                        </p>
+                        <p class="about__details-description">
+                            <i class="ri-checkbox-fill about__details-icon"></i>
+                            100% money back guaranteed.
+                        </p>
+                    </div>
+
+                    <a href="#" class="button--link button--flex">
+                        Book Now <i class="ri-arrow-right-down-line button__icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== STEPS ====================-->
+        <section class="steps section container">
+            <div class="steps__bg">
+                <h2 class="section__title-center steps__title">
+                    Steps to start your <br> treatment off right
+                </h2>
+
+                <div class="steps__container grid">
+                    <div class="steps__card">
+                        <div class="steps__card-number">01</div>
+                        <h3 class="steps__card-title">Choose Your Treatment</h3>
+                        <p class="steps__card-description">
+                            First go to the treatment page and select the treatment you want.
+                        </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">02</div>
+                        <h3 class="steps__card-title">Book Your Treatment</h3>
+                        <p class="steps__card-description">
+                            Give your details and book, then you wait for the date.
+                        </p>
+                    </div>
+
+                    <div class="steps__card">
+                        <div class="steps__card-number">03</div>
+                        <h3 class="steps__card-title">receiving Date</h3>
+                        <p class="steps__card-description">
+                            You will receive a suitable date via email a day before or after.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PRODUCTS ====================-->
+        <section class="product section container" id="products">
+            <h2 class="section__title-center">
+                Check out our <br> Tretments
+            </h2>
+
+            <p class="product__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit Praesentium odio culpa,
+            </p>
+
+            <div class="product__container grid">
+                <article class="product__card" style="border-radius: 50%;">
+                    <!-- <div class="product__circle"></div> -->
+
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636468/AdobeStock_309283401-1024x683_dr6wbg.jpg" alt="" class="product__img"
+                        style="border-radius: 50%;object-fit: cover;width: 100%;height: 100%;">
+
+                    <h3 class="product__title">Non-Speech</h3>
+                    <!-- <span class="product__price">$19.99</span> -->
+
+                    <button class="button--flex product__button">
+                        Book
+                        <!-- <i class="ri-shopping-bag-line"></i> -->
+                    </button>
+                </article>
+
+                <article class="product__card">
+                    <!-- <div class="product__circle"></div> -->
+
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636714/neck-pain-840x594_iu25ln.jpg" alt="" class="product__img"
+                        style="border-radius: 50%;object-fit: cover;width: 100%;height: 100%;">
+
+                    <h3 class="product__title">Spondylitis</h3>
+                    <!-- <span class="product__price">$11.99</span> -->
+
+                    <button class="button--flex product__button">
+                        Book
+                        <!-- <i class="ri-shopping-bag-line"></i> -->
+                    </button>
+                </article>
+
+                <article class="product__card">
+                    <!-- <div class="product__circle"></div> -->
+
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636574/Female-Infertility-Bandhyatva_ovewuz.jpg" alt="" class="product__img"
+                        style="border-radius: 50%;object-fit: cover;width: 100%;height: 100%;">
+
+                    <h3 class="product__title">Sex Problems</h3>
+                    <!-- <span class="product__price">$7.99</span> -->
+
+                    <button class="button--flex product__button">
+                        Book
+                        <!-- <i class="ri-shopping-bag-line"></i> -->
+                    </button>
+                </article>
+
+                <article class="product__card">
+                    <!-- <div class="product__circle"></div> -->
+
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636589/hairfall-1024x517_ryzwpd.jpg" alt="" class="product__img"
+                        style="border-radius: 50%;object-fit: cover;width: 100%;height: 100%;">
+
+                    <h3 class="product__title">Hairfall</h3>
+                    <!-- <span class="product__price">$5.99</span> -->
+
+                    <button class="button--flex product__button">
+                        Book
+                        <!-- <i class="ri-shopping-bag-line"></i> -->
+                    </button>
+                </article>
+
+                <article class="product__card">
+                    <!-- <div class="product__circle"></div> -->
+
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636722/PilesAyurveda_ym3x90.png" alt="" class="product__img"
+                        style="border-radius: 50%;">
+
+                    <h3 class="product__title">Piles</h3>
+                    <!-- <span class="product__price">$10.99</span> -->
+
+                    <button class="button--flex product__button">
+                        Book
+                        <!-- <i class="ri-shopping-bag-line"></i> -->
+                    </button>
+                </article>
+
+                <article class="product__card">
+                    <!-- <div class="product__circle"></div> -->
+
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636706/migraine_jv9blv.png" alt="" class="product__img"
+                        style="border-radius: 50%;">
+
+                    <h3 class="product__title">Migraine</h3>
+                    <!-- <span class="product__price">$8.99</span> -->
+
+                    <button class="button--flex product__button">Book
+                        <!-- <i class="ri-shopping-bag-line"></i> -->
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!--==================== QUESTIONS ====================-->
+        <section class="questions section" id="faqs">
+            <h2 class="section__title-center questions__title container">
+                Some common questions <br> were often asked
+            </h2>
+
+            <div class="questions__container container grid">
+                <div class="questions__group">
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Are the results from <i>Ottamooli Treatment</i> temporary or permanent?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Both temporary treatment and full replacement treatment are available here.
+                                Temporary treatment is for temporary diseas like fever,cough, cold, etc.
+                                And chronic diseases can be completely cured by this treatment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                How many days of treatement are needed for chronic diseases?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Chronic diseases are treated according to illness and age. It is impossible to say how
+                                many days of treatment it will take.
+                                If it is an old person, it can be treated and cured only after many days of treatment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                How are medines prepared for <i>Ottamooli Treatment</i>?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Both temporary treatment and full replacement treatment are available here.
+                                Temporary treatment is for temporary diseas like fever,cough, cold, etc.
+                                And chronic diseases can be completely cured by this treatment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="questions__group">
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Will there be any side effects from taking <i>Ottamooli Treatment</i>?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Both temporary treatment and full replacement treatment are available here.
+                                Temporary treatment is for temporary diseas like fever,cough, cold, etc.
+                                And chronic diseases can be completely cured by this treatment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                Will there be any side effects from taking <i>Ottamooli Treatment</i>?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Chronic diseases are treated according to illness and age. It is impossible to say how
+                                many days of treatment it will take.
+                                If it is an old person, it can be treated and cured only after many days of treatment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="questions__item">
+                        <header class="questions__header">
+                            <i class="ri-add-line questions__icon"></i>
+                            <h3 class="questions__item-title">
+                                How are medines prepared for <i>Ottamooli Treatment</i>?
+                            </h3>
+                        </header>
+
+                        <div class="questions__content">
+                            <p class="questions__description">
+                                Chronic diseases are treated according to illness and age. It is impossible to say how
+                                many days of treatment it will take.
+                                If it is an old person, it can be treated and cured only after many days of treatment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CONTACT ====================-->
+        <section class="contact section container" id="contact">
+            <div class="contact__container grid">
+                <div class="contact__box">
+                    <h2 class="section__title">
+                        Reach out to us today <br> via any of the given <br> information
+                    </h2>
+
+                    <div class="contact__data">
+                        <div class="contact__information">
+                            <h3 class="contact__subtitle">Call us for instant support</h3>
+                            <span class="contact__description">
+                                <i class="ri-phone-line contact__icon"></i>
+                                +91 7902230142
+                            </span>
+                        </div>
+
+                        <div class="contact__information">
+                            <h3 class="contact__subtitle">Write us by mail</h3>
+                            <span class="contact__description">
+                                <i class="ri-mail-line contact__icon"></i>
+                                tkayurvedicpharmacy@gmail.com
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <form method="post" action="{% url 'home' %}" class="contact__form">
+                    {% csrf_token %}
+                    <div class="contact__inputs">
+                        <div class="contact__content">
+                            <input type="text" name="subject" placeholder=" " class="contact__input">
+                            <label for="" class="contact__label">Subject</label>
+                        </div>
+
+                        <div class="contact__content">
+                            <input type="email" name="sender" placeholder=" " class="contact__input">
+                            <label for="" class="contact__label">Email</label>
+                        </div>
+
+                        <div class="contact__content contact__area">
+                            <textarea name="message" name="message" placeholder=" " class="contact__input"></textarea>
+                            <label for="" class="contact__label">Message</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="button button--flex">
+                        Send Message
+                        <i class="ri-arrow-right-up-line button__icon"></i>
+                    </button>
+                </form>
+
+            </div>
+        </section>
+    </main>
+    {% endblock content %}
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636682/logoori_ieznhg.png" alt="" class="footer__logo-icon">
+                </a>
+
+                <h3 class="footer__title">
+                    Treatments Always Yield Side Benefits, <br> Not Side Effects.
+                </h3>
+
+                <!-- <div class="footer__subscribe">
+                        <input type="email" placeholder="Enter your email" class="footer__input">
+
+                        <button class="button button--flex footer__button">
+                            Subscribe
+                            <i class="ri-arrow-right-up-line button__icon"></i>
+                        </button>
+                    </div> -->
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Our Address</h3>
+
+                <ul class="footer__data">
+                    <li class="footer__information">TK Ayurvedic</li>
+                    <li class="footer__information">Near Thrikkuttissery School</li>
+                    <li class="footer__information">Balussery - 673613</li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Contact Us</h3>
+
+                <ul class="footer__data">
+                    <li class="footer__information">+91 7907483052</li>
+
+                    <div class="footer__social">
+                        <a href="https://wa.me/qr/YVGUPLEIMIP5L1" class="footer__social-link">
+                            <i class="ri-whatsapp-fill"></i>
+                        </a>
+                        <a href="https://instagram.com/tk_aayurvedic_pharmacy?igshid=ZGUzMzM3NWJiOQ=="
+                            class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <!-- <a href="https://twitter.com/" class="footer__social-link">
+                                <i class="ri-twitter-fill"></i>
+                            </a> -->
+                    </div>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    Time-Tested Remedies for Modern Living.
+                </h3>
+
+                <div class="footer__cards">
+                    <img src="assets/img/card1.png" alt="" class="footer__card">
+                    <img src="assets/img/card2.png" alt="" class="footer__card">
+                    <img src="assets/img/card3.png" alt="" class="footer__card">
+                    <img src="assets/img/card4.png" alt="" class="footer__card">
+                </div>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; AK Creative Design. All rigths reserved</p>
+    </footer>
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        /*=============== SHOW MENU ===============*/
+        const navMenu = document.getElementById('nav-menu'),
+            navToggle = document.getElementById('nav-toggle'),
+            navClose = document.getElementById('nav-close')
+
+        /*===== MENU SHOW =====*/
+        /* Validate if constant exists */
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.add('show-menu')
+            })
+        }
+
+        /*===== MENU HIDDEN =====*/
+        /* Validate if constant exists */
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('show-menu')
+            })
+        }
+
+        /*=============== REMOVE MENU MOBILE ===============*/
+        const navLink = document.querySelectorAll('.nav__link')
+
+        function linkAction() {
+            const navMenu = document.getElementById('nav-menu')
+            // When we click on each nav__link, we remove the show-menu class
+            navMenu.classList.remove('show-menu')
+        }
+        navLink.forEach(n => n.addEventListener('click', linkAction))
+
+        //End//
+
+        // Text Animation//
+        var typingEffect = new Typed(".home__title", {
+            strings: ["Welcome To TK Ayurvedic Pharmacy", "വയനാടൻ ഒറ്റമൂലി ചികിത്സ", "25 വർഷത്തെ സേവന പാരമ്പര്യം"],
+            loop: true,
+            typeSpeed: 100,
+            //backSpeed : 80,
+            startDelay: 2000,
+            backDelay: 1500,
+        })
+
+        //End//
+
+
+
+        /*=============== CHANGE BACKGROUND HEADER ===============*/
+        function scrollHeader() {
+            const header = document.getElementById('header')
+            // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
+            if (this.scrollY >= 80) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+        }
+        window.addEventListener('scroll', scrollHeader)
+
+
+        /*=============== QUESTIONS ACCORDION ===============*/
+        const accordionItems = document.querySelectorAll('.questions__item')
+
+        accordionItems.forEach((item) => {
+            const accordionHeader = item.querySelector('.questions__header')
+
+            accordionHeader.addEventListener('click', () => {
+                const openItem = document.querySelector('.accordion-open')
+
+                toggleItem(item)
+
+                if (openItem && openItem !== item) {
+                    toggleItem(openItem)
+                }
+            })
+        })
+
+        const toggleItem = (item) => {
+            const accordionContent = item.querySelector('.questions__content')
+
+            if (item.classList.contains('accordion-open')) {
+                accordionContent.removeAttribute('style')
+                item.classList.remove('accordion-open')
+            } else {
+                accordionContent.style.height = accordionContent.scrollHeight + 'px'
+                item.classList.add('accordion-open')
+            }
+
+        }
+
+
+        /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+        const sections = document.querySelectorAll('section[id]')
+
+        function scrollActive() {
+            const scrollY = window.pageYOffset
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight,
+                    sectionTop = current.offsetTop - 58,
+                    sectionId = current.getAttribute('id')
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+                } else {
+                    document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+                }
+            })
+        }
+        window.addEventListener('scroll', scrollActive)
+
+
+        /*=============== SHOW SCROLL UP ===============*/
+        function scrollUp() {
+            const scrollUp = document.getElementById('scroll-up');
+            // When the scroll is higher than 400 viewport height, add the show-scroll class to the a tag with the scroll-top class
+            if (this.scrollY >= 400) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+        }
+        window.addEventListener('scroll', scrollUp)
+
+
+        /*=============== SCROLL REVEAL ANIMATION ===============*/
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '60px',
+            duration: 2500,
+            delay: 400,
+            // reset: true
+        })
+
+        sr.reveal('.home__data')
+        sr.reveal('.home__img', { delay: 500 })
+        sr.reveal('.home__social', { delay: 600 })
+        sr.reveal('.about__img, .contact__box', { origin: 'left' })
+        sr.reveal('.about__data, .contact__form', { origin: 'right' })
+        sr.reveal('.steps__card, .product__card, .questions__group, .footer', { interval: 100 })
+
+    </script>
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-fill scrollup__icon"></i>
+    </a>
+
+</body>
+
+</html>

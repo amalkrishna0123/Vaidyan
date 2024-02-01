@@ -66,13 +66,25 @@ WSGI_APPLICATION = 'ayurvedic.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "143@malIKKA",
-        "HOST": "localhost",
+        "NAME": "ayurvedic",
+        "USER": "ayurvedic_user",
+        "PASSWORD": "mLdCf0tjUbxz2UMemKvxchdZdFkFZBF3",
+        "HOST": "dpg-cmtr1t8cmk4c7390got0-a.singapore-postgres.render.com",
         "PORT": "5432",
     }
 }
+
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "postgres",
+#         "USER": "postgres",
+#         "PASSWORD": "143@malIKKA",
+#         "HOST": "localhost",
+#         "PORT": "5432",
+#     }
+# }
 
 
 # Password validation

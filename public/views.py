@@ -20,7 +20,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django import forms
 from django.core.exceptions import ValidationError
 from .models import Appointment
+from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
+
 
 
 
@@ -47,10 +50,10 @@ def Index(request):
 
 
 
-class BookingTemplateView(TemplateView, LoginRequiredMixin):
+class BookingTemplateView(LoginRequiredMixin, TemplateView):
     template_name = "booking.html"
     login_url = "/Login"
- 
+    
     def post(self, request):
         fname = request.POST.get("fname")
         lname = request.POST.get("lname")
@@ -166,7 +169,9 @@ def Login(request):
         user = authenticate(username = username, password = password)
         if user is not None:
             login(request,user)
-            return redirect('home')
+            # Redirect to the booking page if available, else redirect to the homepage
+            next_page = request.GET.get('next', reverse('Booking'))
+            return HttpResponseRedirect(next_page)
         else:
             return redirect('Login')
 

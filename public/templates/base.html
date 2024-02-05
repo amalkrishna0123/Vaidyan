@@ -9,6 +9,9 @@
     <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
+    <link rel="icon" href="https://res.cloudinary.com/dqydgc2ky/image/upload/v1706862820/logoori_juxmtv.png" type="image/png">
+
+
     <!--=============== REMIX ICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <!--=============== CSS ===============-->
@@ -190,7 +193,7 @@
             cursor: pointer;
         }
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             .nav__menu {
                 position: fixed;
                 /* background-color: var(--container-color); */
@@ -458,16 +461,18 @@
         .product__card {
             display: grid;
             position: relative;
-            border-radius: 50%;
+            /* border-radius: 50%; */
         }
 
         .product__img {
             position: relative;
             width: 140px;
+            height: 140px;
             justify-self: center;
             margin-bottom: var(--mb-0-75);
             transition: .3s;
             border-radius: 50%;
+            object-fit: cover;
         }
 
         .product__title,
@@ -1033,7 +1038,7 @@
             }
         }
 
-        @media screen and (min-width : 767px) {
+        @media screen and (min-width : 768px) {
             body {
                 margin: 0;
             }
@@ -1051,6 +1056,9 @@
             .nav__list {
                 flex-direction: row;
                 column-gap: 3rem;
+            }
+            .nav__list .nav__link{
+                font-size: 12px;
             }
 
             .nav__menu {
@@ -1112,6 +1120,9 @@
         /* For Large Screen */
 
         @media screen and (min-width : 1024px) {
+            .nav__list .nav__link{
+                font-size: 15px;
+            }
             .container {
                 margin-left: auto;
                 margin-right: auto;
@@ -1534,11 +1545,10 @@
             </p>
 
             <div class="product__container grid">
-                <article class="product__card" style="border-radius: 50%;">
+                <article class="product__card">
                     <!-- <div class="product__circle"></div> -->
 
-                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636468/AdobeStock_309283401-1024x683_dr6wbg.jpg" alt="" class="product__img"
-                        style="border-radius: 50%;object-fit: cover;width: 100%;height: 100%;">
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636468/AdobeStock_309283401-1024x683_dr6wbg.jpg" alt="" class="product__img">
 
                     <h3 class="product__title">Non-Speech</h3>
                     <!-- <span class="product__price">$19.99</span> -->
@@ -1552,8 +1562,7 @@
                 <article class="product__card">
                     <!-- <div class="product__circle"></div> -->
 
-                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636714/neck-pain-840x594_iu25ln.jpg" alt="" class="product__img"
-                        style="border-radius: 50%;object-fit: cover;width: 100%;height: 100%;">
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636714/neck-pain-840x594_iu25ln.jpg" alt="" class="product__img">
 
                     <h3 class="product__title">Spondylitis</h3>
                     <!-- <span class="product__price">$11.99</span> -->
@@ -1567,8 +1576,7 @@
                 <article class="product__card">
                     <!-- <div class="product__circle"></div> -->
 
-                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636574/Female-Infertility-Bandhyatva_ovewuz.jpg" alt="" class="product__img"
-                        style="border-radius: 50%;object-fit: cover;width: 100%;height: 100%;">
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636574/Female-Infertility-Bandhyatva_ovewuz.jpg" alt="" class="product__img">
 
                     <h3 class="product__title">Sex Problems</h3>
                     <!-- <span class="product__price">$7.99</span> -->
@@ -1582,8 +1590,7 @@
                 <article class="product__card">
                     <!-- <div class="product__circle"></div> -->
 
-                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636589/hairfall-1024x517_ryzwpd.jpg" alt="" class="product__img"
-                        style="border-radius: 50%;object-fit: cover;width: 100%;height: 100%;">
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636589/hairfall-1024x517_ryzwpd.jpg" alt="" class="product__img">
 
                     <h3 class="product__title">Hairfall</h3>
                     <!-- <span class="product__price">$5.99</span> -->
@@ -1597,8 +1604,7 @@
                 <article class="product__card">
                     <!-- <div class="product__circle"></div> -->
 
-                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636722/PilesAyurveda_ym3x90.png" alt="" class="product__img"
-                        style="border-radius: 50%;">
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636722/PilesAyurveda_ym3x90.png" alt="" class="product__img">
 
                     <h3 class="product__title">Piles</h3>
                     <!-- <span class="product__price">$10.99</span> -->
@@ -1612,8 +1618,7 @@
                 <article class="product__card">
                     <!-- <div class="product__circle"></div> -->
 
-                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636706/migraine_jv9blv.png" alt="" class="product__img"
-                        style="border-radius: 50%;">
+                    <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636706/migraine_jv9blv.png" alt="" class="product__img">
 
                     <h3 class="product__title">Migraine</h3>
                     <!-- <span class="product__price">$8.99</span> -->
@@ -1771,22 +1776,22 @@
                     {% csrf_token %}
                     <div class="contact__inputs">
                         <div class="contact__content">
-                            <input type="text" name="subject" placeholder=" " class="contact__input">
+                            <input type="text" name="subject" placeholder=" " class="contact__input" required>
                             <label for="" class="contact__label">Subject</label>
                         </div>
 
                         <div class="contact__content">
-                            <input type="email" name="sender" placeholder=" " class="contact__input">
+                            <input type="email" name="sender" placeholder=" " class="contact__input" required>
                             <label for="" class="contact__label">Email</label>
                         </div>
 
                         <div class="contact__content contact__area">
-                            <textarea name="message" name="message" placeholder=" " class="contact__input"></textarea>
+                            <textarea name="message" name="message" placeholder=" " class="contact__input" required></textarea>
                             <label for="" class="contact__label">Message</label>
                         </div>
                     </div>
 
-                    <button type="submit" class="button button--flex">
+                    <button type="submit" class="button button--flex" style="padding-left: 15px;padding-right: 15px;align-items: center;justify-content: space-around;padding-top: 10px;padding-bottom: 10px;border-radius: 10px;">
                         Send Message
                         <i class="ri-arrow-right-up-line button__icon"></i>
                     </button>

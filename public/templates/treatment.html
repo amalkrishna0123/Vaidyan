@@ -397,21 +397,28 @@ section .card .image img{
 .card-image{
     position: absolute;
     width: 120px;
-    height: auto;
-    margin-left: 90px;
-    margin-top: 10px;
+    height: 120px;
+    /* margin-left: 90px;
+    margin-top: 10px; */
+    object-fit: cover;
+    border-radius: 50%;
 }
 .card-image img{
-    width: 120px;
+    width: 100%;
+    height : 100%;
     border-radius: 50%;
 }
 .card-content{
     position: relative;
+    /* display: flex;
+    flex-direction: column; */
+    /* gap: 10px; */
 }
 .card-content .card-content-description{
     position: absolute;
     margin-top: 130px;
     text-align: center;
+    line-height: 27px;
 }
 .card-content .card-content-name{
     position: absolute;
@@ -480,8 +487,14 @@ section .card .image img{
 }
 
 @media screen and (min-width: 768px){
+  
   .carousel-inner{
     height: 200px;
+    width: auto;
+    overflow: hidden;
+  }
+  .carousel-item{
+    width: auto;
   }
   .card-box{
     width: 670px;
@@ -515,18 +528,36 @@ section .card .image img{
       font-weight: 600;
   }
   .header{
-    width: 768px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* .nav{
+    margin-left: -80px;
+  }
+  .nav__logo{
+    margin-left: 40px;
+  } */
+}
+/* Medium Devices */
+
+/* For Large Screen  */
+/* @media screen and (max-width: 992px){
+  .header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .nav{
     margin-left: -80px;
   }
   .nav__logo{
-    margin-left: 40px;
+    margin-left: 100px;
   }
-}
-/* Medium Devices */
 
-/* For Large Screen  */
+} */
 @media screen and (min-width: 1024px){
   .carousel-inner{
     margin-left: 220px;
@@ -803,7 +834,7 @@ section .card .image img{
 </section>
 
 <!-- Reviews Start-->
-<div class="container">
+<!-- <div class="container">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -818,7 +849,7 @@ section .card .image img{
                   <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636567/card1_1_twjpm6.jpg" alt="">
               </div>
               <div class="card-content">
-                  <p class="card-content-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum deleniti sed, veniam consequatur</p>
+                  <p class="card-content-description">Absolutely delighted with my experience at this Ayurvedic clinic! The treatments based on Vayanadan Ottamooli were incredibly effective in addressing my health concerns</p>
                   <h4 class="card-content-name">Meenakshi</h4>
               </div>
           </div>
@@ -828,10 +859,10 @@ section .card .image img{
       <div class="review-card">
           <div class="card-box">
               <div class="card-image">
-                  <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695622104/samples/smile.jpg" alt="">
+                  <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1706867210/portrait-handsome-smiling-stylish-young-man-model-dressed-red-checkered-shirt-fashion-man-posing_wlfwya.jpg" alt="">
               </div>
               <div class="card-content">
-                  <p class="card-content-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum deleniti sed, veniam consequatur</p>
+                  <p class="card-content-description">I can't recommend this clinic highly enough! Their integration of Vayanadan Ottamooli techniques into their treatments yielded remarkable results for me. </p>
                   <h4 class="card-content-name">Dakshith</h4>
               </div>
           </div>
@@ -844,7 +875,7 @@ section .card .image img{
                   <img src="https://res.cloudinary.com/dqydgc2ky/image/upload/v1695636583/card2_j2xv0z.jpg" alt="">
               </div>
               <div class="card-content">
-                  <p class="card-content-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum deleniti sed, veniam consequatur</p>
+                  <p class="card-content-description">A true gem in the world of Ayurveda! My journey at this clinic, rooted in the traditional practices of Vayanadan Ottamooli, has been transformative. The holistic care I received here not only healed my ailments but also nourished my overall well-being.</p>
                   <h4 class="card-content-name">Veena</h4>
               </div>
           </div>
@@ -860,7 +891,7 @@ section .card .image img{
     <span class="sr-only">Next</span>
   </a>
 </div>
-</div>
+</div> -->
 
 <!-- Reviews End -->
 

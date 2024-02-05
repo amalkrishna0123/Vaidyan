@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-60o8k_u)tf-&gc5hp0j72rybolr)63+ssa!p6ef^d_p0$fgf=u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tk-ayurvedic.onrender.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition

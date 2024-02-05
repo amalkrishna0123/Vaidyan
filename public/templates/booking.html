@@ -248,7 +248,16 @@
        } 
     }
     @media  screen and (min-width: 1440px){
-        .container .wrapper{
+        .wrapper .Display_Message{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* margin-left: 0;
+            margin-right: 0; */
+        }
+        /* .container .wrapper{
             width: 100%;
             height: 790px;
             margin-top: 50px;
@@ -256,16 +265,19 @@
             margin-left: 0;
             text-align: center;
             border-radius: 20px;
-       } 
+       }  */
     }
     /* Large Devices End */
     </style>
+
+
+
 <div class="container">
     <div class="wrapper">
     {% if messages %}
         <div class="Display_Message">
         {% for message in messages  %}
-            <h4 class="Message_Title">Thanks amal for making a booking we will mail you ASAP!</h4>
+            <h4 class="Message_Title">{{message}}</h4>
         {% endfor %}
         </div>
     {% endif %}
@@ -294,7 +306,7 @@
                         <ion-icon name="call"></ion-icon>
                     </span>
                     <input type="text" id="mobile" name="mobile" placeholder="Phone Number" required pattern="^\+?1?\d{10,10}$"
-                    title="Phone number must be entered in the format: '+999999999'. Up to 11 digits allowed."><br>
+                    title="Phone number must be entered in the format: '+999999999'. Up to 10 digits allowed."><br>
                 </div>
 
 

@@ -63,13 +63,14 @@ WSGI_APPLICATION = 'ayurvedic.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "ayurvedic",
+        "NAME": "ayurvedic_ikwh",
         "USER": "ayurvedic_user",
-        "PASSWORD": "mLdCf0tjUbxz2UMemKvxchdZdFkFZBF3",
-        "HOST": "dpg-cmtr1t8cmk4c7390got0-a.singapore-postgres.render.com",
+        "PASSWORD": "WjbTyBA1x1gOFVDjqXi7L962MVEPHp52",
+        "HOST": "dpg-copt4bv79t8c7385p5bg-a.singapore-postgres.render.com",
         "PORT": "5432",
     }
 }
